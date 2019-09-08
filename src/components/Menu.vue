@@ -13,6 +13,9 @@
       <a-menu-item key="calculator">
         <a-icon type="calculator" />Калькулятор
       </a-menu-item>
+      <a-menu-item key="read">
+        <a-icon type="read" />Руководство
+      </a-menu-item>
       <a-menu-item key="user" style="float: right">
         <a-icon type="user" />
       </a-menu-item>
