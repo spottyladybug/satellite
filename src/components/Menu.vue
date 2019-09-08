@@ -1,14 +1,17 @@
 <template>
   <div>
     <a-menu v-model="currentTab" mode="horizontal" :theme="theme" @click="handleClick">
+      <a-menu-item key="rocket">
+        <a-icon type="rocket" />Спутники
+      </a-menu-item>
       <a-menu-item key="search">
-        <a-icon type="search" />Поисковик спутников
+        <a-icon type="search" />Местоположение
       </a-menu-item>
       <a-menu-item key="apartment">
-        <a-icon type="apartment" />Модель спутникового канала связи
+        <a-icon type="apartment" />Модель канала связи
       </a-menu-item>
       <a-menu-item key="calculator">
-        <a-icon type="calculator" />Расчет параметров
+        <a-icon type="calculator" />Калькулятор
       </a-menu-item>
       <a-menu-item key="user" style="float: right">
         <a-icon type="user" />
