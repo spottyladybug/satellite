@@ -36,16 +36,20 @@ export default {
   name: "Menu",
   data() {
     return {
-      currentTab: ["user"],
-      theme: "dark"
+      currentTab: ["user"]
     };
+  },
+  computed: {
+    theme() {
+      return this.$store.state.theme;
+    }
   },
   methods: {
     handleClick(e) {
       this.current = e.key;
     },
     changeTheme(checked) {
-      this.theme = checked ? "dark" : "light";
+      this.$store.commit("theme", checked ? "dark" : "light");
     }
   }
 };
