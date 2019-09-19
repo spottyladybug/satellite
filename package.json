@@ -1,5 +1,5 @@
 {
-  "name": "setellite",
+  "name": "satellite",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "ant-design-vue": "^1.2.4",
+    "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3",

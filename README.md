@@ -1,4 +1,4 @@
-# setellite
+# satellite
 
 ## Project setup
 ```
