@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import user from './modules/user'
-import auth from './modules/auth'
-import theme from './modules/theme'
+import user from 'src/store/modules/user'
+import auth from 'src/store/modules/auth'
+import theme from 'src/store/modules/theme'
 
 Vue.use(Vuex);
 

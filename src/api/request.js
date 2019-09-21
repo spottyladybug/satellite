@@ -1,4 +1,4 @@
-import Repository from './repository';
+import Repository from 'src/api/repository';
 
 export default {
     index(resource) {

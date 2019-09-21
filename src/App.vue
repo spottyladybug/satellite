@@ -4,7 +4,7 @@
             <Menu/>
             <div class="main-container">
                 <div class="center-container">
-                    <Login/>
+                    <router-view></router-view>
                 </div>
             </div>
         </div>
@@ -13,9 +13,8 @@
 
 <script>
     import ru_RU from 'ant-design-vue/lib/locale-provider/ru_RU'
-    import Menu from './components/Menu.vue'
-    import {USER_REQUEST} from './store/actions/user'
-    import Login from "./components/Login";
+    import Menu from 'src/components/Menu.vue'
+    import {USER_REQUEST} from 'src/store/actions/user'
 
     export default {
         name: 'app',
@@ -25,7 +24,6 @@
             }
         },
         components: {
-            Login,
             Menu
         },
         created: function () {

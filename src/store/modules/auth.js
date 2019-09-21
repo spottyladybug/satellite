@@ -1,6 +1,6 @@
-import { AUTH_REQUEST, AUTH_ERROR, AUTH_SUCCESS, AUTH_LOGOUT } from '../actions/auth'
-import { USER_REQUEST } from '../actions/user'
-import auth from '../../api/auth'
+import { AUTH_REQUEST, AUTH_ERROR, AUTH_SUCCESS, AUTH_LOGOUT } from 'src/store/actions/auth'
+import { USER_REQUEST } from 'src/store/actions/user'
+import auth from 'src/api/auth'
 
 const state = {
     token: localStorage.getItem('user-token') || '',

@@ -1,4 +1,4 @@
-import { THEME } from '../actions/theme'
+import { THEME } from 'src/store/actions/theme'
 
 const state = { theme: 'dark' };
 

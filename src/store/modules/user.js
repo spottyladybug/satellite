@@ -1,7 +1,7 @@
-import { USER_REQUEST, USER_ERROR, USER_SUCCESS } from '../actions/user'
-import auth from '../../api/auth'
+import { USER_REQUEST, USER_ERROR, USER_SUCCESS } from 'src/store/actions/user'
+import auth from 'src/api/auth'
 import Vue from 'vue'
-import { AUTH_LOGOUT } from '../actions/auth'
+import { AUTH_LOGOUT } from 'src/store/actions/auth'
 
 const state = {
     status: '',

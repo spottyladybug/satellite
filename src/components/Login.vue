@@ -69,7 +69,7 @@
 </template>
 
 <script>
-    import {AUTH_REQUEST} from '../../src/store/actions/auth'
+    import {AUTH_REQUEST} from 'src/store/actions/auth'
 
     export default {
         name: "Login",

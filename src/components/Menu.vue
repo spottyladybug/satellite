@@ -48,8 +48,8 @@
 
 <script>
     import {mapGetters, mapState} from 'vuex'
-    import {AUTH_LOGOUT} from '../store/actions/auth'
-    import {THEME} from '../store/actions/theme'
+    import {AUTH_LOGOUT} from 'src/store/actions/auth'
+    import {THEME} from 'src/store/actions/theme'
 
     export default {
         name: "Menu",
