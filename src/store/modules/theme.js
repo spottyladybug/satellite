@@ -1,14 +1,15 @@
-import { THEME } from 'src/store/actions/theme'
+import { THEME, DARK } from 'src/store/actions/theme'
 
-const state = { theme: 'dark' };
+const state = { theme: DARK };
 
 const getters = {
-    getTheme: state => state.theme
+    isDarkTheme: state => state.theme,
+    getTheme: state => state.theme ? 'dark' : 'light',
 };
 
 const mutations = {
-    [THEME]: (state, name) => {
-        state.theme = name
+    [THEME]: (state, checked) => {
+        state.theme = checked
     },
 };
 

@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from 'src/store'
-import Login from 'src/components/Login';
-import Home from 'src/components/Home';
+import Login from 'src/pages/Login';
+import Home from 'src/pages/Home';
 
 Vue.use(Router);
 
