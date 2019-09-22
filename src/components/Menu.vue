@@ -2,16 +2,24 @@
   <div>
     <a-menu v-model="currentTab" mode="horizontal" :theme="getTheme" @click="handleClick">
       <a-menu-item v-if="isProfileLoaded" key="rocket">
-        <a-icon type="rocket" />Спутники
+        <router-link :to="{ name: 'satellites' }">
+          <a-icon type="rocket" />Спутники
+        </router-link>
       </a-menu-item>
       <a-menu-item v-if="isProfileLoaded" key="search">
-        <a-icon type="search" />Местоположение
+        <router-link :to="{ name: 'locationMap' }">
+          <a-icon type="search" />Местоположение
+        </router-link>
       </a-menu-item>
       <a-menu-item v-if="isProfileLoaded" key="apartment">
-        <a-icon type="apartment" />Модель канала связи
+        <router-link :to="{ name: 'channelModel' }">
+          <a-icon type="apartment" />Модель канала связи
+        </router-link>
       </a-menu-item>
       <a-menu-item v-if="isProfileLoaded" key="calculator">
-        <a-icon type="calculator" />Калькулятор
+        <router-link :to="{ name: 'calculator' }">
+          <a-icon type="calculator" />Калькулятор
+        </router-link>
       </a-menu-item>
       <a-sub-menu style="float: right" key="locale">
         <span slot="title">
@@ -20,8 +28,12 @@
         <a-menu-item>Русский</a-menu-item>
         <a-menu-item>English</a-menu-item>
       </a-sub-menu>
-      <a-menu-item v-if="!isProfileLoaded" key="register" style="float: right">Присоединиться</a-menu-item>
-      <a-menu-item v-if="!isProfileLoaded" key="login" style="float: right">Войти</a-menu-item>
+      <a-menu-item v-if="!isProfileLoaded" key="register" style="float: right">
+        <router-link :to="{ name: 'register' }">Присоединиться</router-link>
+      </a-menu-item>
+      <a-menu-item v-if="!isProfileLoaded" key="login" style="float: right">
+        <router-link :to="{ name: 'login' }">Войти</router-link>
+      </a-menu-item>
       <a-sub-menu v-if="isProfileLoaded" key="user" style="float: right">
         <span slot="title">
           <a-icon type="user" />
@@ -33,15 +45,19 @@
         </a-menu-item>
         <a-menu-divider />
         <a-menu-item>
-          <a-icon type="profile" />
-          <span>Профиль</span>
+          <router-link :to="{ name: 'profile' }">
+            <a-icon type="profile" />
+            <span>Профиль</span>
+          </router-link>
         </a-menu-item>
         <a-menu-item>
-          <a-icon type="setting" />
-          <span>Настройки</span>
+          <router-link :to="{ name: 'settings' }">
+            <a-icon type="setting" />
+            <span>Настройки</span>
+          </router-link>
         </a-menu-item>
         <a-menu-divider />
-        <a-menu-item>
+        <a-menu-item @click="logout">
           <a-icon type="logout" />
           <span>Выход</span>
         </a-menu-item>
@@ -70,11 +86,11 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'isDarkTheme',
-      'getTheme',
-      'getName',
-      'isAuthenticated',
-      'isProfileLoaded',
+      "isDarkTheme",
+      "getTheme",
+      "getName",
+      "isAuthenticated",
+      "isProfileLoaded"
     ]),
     ...mapState({
       authLoading: state => state.auth.status === "loading",
@@ -83,7 +99,9 @@ export default {
   },
   methods: {
     logout: function() {
-      this.$store.dispatch(AUTH_LOGOUT).then(() => this.$router.push("/login"));
+      this.$store
+        .dispatch(AUTH_LOGOUT)
+        .then(() => this.$router.push({ name: "login" }));
     },
     handleClick(e) {
       this.current = e.key;

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import store from 'src/store'
 import Login from 'src/pages/Login';
 import Home from 'src/pages/Home';
+import Satellites from 'src/pages/Satellites';
 
 Vue.use(Router);
 
@@ -23,16 +24,46 @@ export default new Router({
             component: Home,
         },
         {
+            path: '/satellites',
+            name: 'satellites',
+            component: Satellites,
+        },
+        {
+            path: '/locationMap',
+            name: 'locationMap',
+            component: Home,
+        },
+        {
+            path: '/channelModel',
+            name: 'channelModel',
+            component: Home,
+        },
+        {
+            path: '/calculator',
+            name: 'calculator',
+            component: Home,
+        },
+        {
+            path: '/profile',
+            name: 'profile',
+            component: Home,
+        },
+        {
+            path: '/settings',
+            name: 'settings',
+            component: Home,
+        },
+        {
             path: '/login',
             name: 'login',
             component: Login,
             beforeEnter: ifNotAuthenticated,
         },
-        // {
-        //     path: '/register',
-        //     name: 'register',
-        //     component: Register,
-        //     beforeEnter: ifNotAuthenticated,
-        // },
+        {
+            path: '/register',
+            name: 'register',
+            component: Home,
+            beforeEnter: ifNotAuthenticated,
+        },
     ],
 })

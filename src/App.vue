@@ -37,7 +37,6 @@
     .center-container {
         display: flex;
         align-items: center;
-        flex-direction: column;
         padding: 10% 0;
     }
 </style>

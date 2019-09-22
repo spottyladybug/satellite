@@ -9,9 +9,9 @@
             <a-input
                 v-decorator="[
           'username',
-          { rules: [{ required: true, message: 'Please input your username!' }] }
+          { rules: [{ required: true, message: 'Пожалуйста, введите свой логин!' }] }
         ]"
-                placeholder="Username"
+                placeholder="Логин"
             >
                 <a-icon
                     slot="prefix"
@@ -24,10 +24,10 @@
             <a-input
                 v-decorator="[
           'password',
-          { rules: [{ required: true, message: 'Please input your Password!' }] }
+          { rules: [{ required: true, message: 'Пожалуйста, введите свой пароль!' }] }
         ]"
                 type="password"
-                placeholder="Password"
+                placeholder="Пароль"
             >
                 <a-icon
                     slot="prefix"
@@ -46,23 +46,23 @@
           }
         ]"
             >
-                Remember me
+                Запомнить меня
             </a-checkbox>
             <a
                 class="login-form-forgot"
                 href=""
             >
-                Forgot password
+                Забыть пароль
             </a>
             <a-button
                 type="primary"
                 html-type="submit"
                 class="login-form-button"
             >
-                Log in
+                Войти
             </a-button>
-            Or <a href="">
-            register now!
+            Или <a href="">
+            присоединиться сейчас!
         </a>
         </a-form-item>
     </a-form>
@@ -89,7 +89,7 @@
                     if (!err) {
                         const {username, password} = this;
                         this.$store.dispatch(AUTH_REQUEST, {username, password}).then(() => {
-                            return this.$router.push('/')
+                            return this.$router.push({ name: 'home' })
                         })
                     }
                 });
@@ -98,6 +98,10 @@
     };
 </script>
 <style>
+    form#login-form {
+        padding-left: 10%;
+    }
+    
     #login-form .login-form {
         max-width: 300px;
     }
