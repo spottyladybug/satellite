@@ -3,9 +3,7 @@
         <div id="app">
             <Menu/>
             <div class="main-container">
-                <div class="center-container">
-                    <router-view></router-view>
-                </div>
+                <router-view></router-view>
             </div>
         </div>
     </a-locale-provider>
@@ -34,9 +32,9 @@
     }
 </script>
 <style>
-    .center-container {
+    .main-container {
         display: flex;
         align-items: center;
-        padding: 10% 0;
+        flex-flow: column;
     }
 </style>

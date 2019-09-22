@@ -99,11 +99,11 @@
 </script>
 <style>
     form#login-form {
-        padding-left: 10%;
+        padding: 10% 0;
     }
     
     #login-form .login-form {
-        max-width: 300px;
+        max-width: 50%;
     }
 
     #login-form .login-form-forgot {
