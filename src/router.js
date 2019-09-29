@@ -29,13 +29,8 @@ export default new Router({
             component: Satellites,
         },
         {
-            path: '/locationMap',
-            name: 'locationMap',
-            component: Home,
-        },
-        {
-            path: '/channelModel',
-            name: 'channelModel',
+            path: '/searchInfo',
+            name: 'searchInfo',
             component: Home,
         },
         {

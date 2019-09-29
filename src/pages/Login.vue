@@ -99,6 +99,7 @@
 </script>
 <style>
     form#login-form {
+        height: 100%;
         padding: 10% 0;
     }
     

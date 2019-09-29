@@ -1,10 +1,13 @@
 <template>
     <a-locale-provider :locale="ru_RU">
         <div id="app">
-            <Menu/>
-            <div class="main-container">
-                <router-view></router-view>
-            </div>
+            <a-layout>
+                <Menu/>
+                <a-layout-content class="main-container">
+                    <router-view></router-view>
+                </a-layout-content>
+                <Footer/>
+            </a-layout>
         </div>
     </a-locale-provider>
 </template>
@@ -12,6 +15,7 @@
 <script>
     import ru_RU from 'ant-design-vue/lib/locale-provider/ru_RU'
     import Menu from 'src/components/Menu.vue'
+    import Footer from 'src/components/Footer.vue'
     import {USER_REQUEST} from 'src/store/actions/user'
 
     export default {
@@ -22,7 +26,8 @@
             }
         },
         components: {
-            Menu
+            Menu,
+            Footer
         },
         created: function () {
             if (this.$store.getters.isAuthenticated) {
@@ -32,9 +37,17 @@
     }
 </script>
 <style>
+    .ant-layout {
+        height: 100%;
+    }
+    .main-container.ant-layout-content {
+        min-height: 600px;
+        padding: 5% 0%;
+    }
     .main-container {
         display: flex;
         align-items: center;
         flex-flow: column;
+        background-image: url(./assets/background.jpg);
     }
 </style>

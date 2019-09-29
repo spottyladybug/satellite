@@ -1,24 +1,19 @@
 <template>
   <div>
     <a-menu v-model="currentTab" mode="horizontal" :theme="getTheme" @click="handleClick">
+      <a-menu-item v-if="isProfileLoaded" key="search">
+        <router-link :to="{ name: 'searchInfo' }">
+          <a-icon type="search" />Найти
+        </router-link>
+      </a-menu-item>
       <a-menu-item v-if="isProfileLoaded" key="rocket">
         <router-link :to="{ name: 'satellites' }">
           <a-icon type="rocket" />Спутники
         </router-link>
       </a-menu-item>
-      <a-menu-item v-if="isProfileLoaded" key="search">
-        <router-link :to="{ name: 'locationMap' }">
-          <a-icon type="search" />Местоположение
-        </router-link>
-      </a-menu-item>
-      <a-menu-item v-if="isProfileLoaded" key="apartment">
-        <router-link :to="{ name: 'channelModel' }">
-          <a-icon type="apartment" />Модель канала связи
-        </router-link>
-      </a-menu-item>
       <a-menu-item v-if="isProfileLoaded" key="calculator">
         <router-link :to="{ name: 'calculator' }">
-          <a-icon type="calculator" />Калькулятор
+          <a-icon type="calculator" />Расчет параметров
         </router-link>
       </a-menu-item>
       <a-sub-menu style="float: right" key="locale">
@@ -62,7 +57,7 @@
           <span>Выход</span>
         </a-menu-item>
       </a-sub-menu>
-      <a-menu-item v-if="isProfileLoaded" key="help" style="float: right">
+      <a-menu-item key="help" style="float: right">
         <a-icon type="question-circle" />
       </a-menu-item>
       <a-menu-item style="float: right">

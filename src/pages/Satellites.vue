@@ -37,7 +37,7 @@ export default {
     return {
       listData,
       pagination: {
-        pageSize: 6
+        pageSize: 5
       },
       actions: [{ type: "edit" }, { type: "delete" }]
     };
@@ -46,6 +46,7 @@ export default {
 </script>
 <style>
 div#satellites-list {
+  height: 100%;
   width: 50%;
 }
 </style>

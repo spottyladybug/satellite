@@ -1,6 +1,6 @@
 <template>
-    <div>
-        This is your home
+    <div id="home">
+        Страница в разработке
     </div>
 </template>
 
