@@ -6,8 +6,8 @@
     :pagination="pagination"
     :dataSource="listData"
   >
-    <a-list-item slot="renderItem" slot-scope="item, index" key="item.title">
-      <template slot="actions" v-for="{type, text} in actions">
+    <a-list-item slot="renderItem" slot-scope="item" key="item.title">
+      <template slot="actions" v-for="{type} in actions">
         <span :key="type">
           <a-icon :type="type" style="margin-right: 8px" />
         </span>
