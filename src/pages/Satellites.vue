@@ -1,6 +1,6 @@
 <template>
   <a-list
-    id="satellites-list"
+    id="satellite-list"
     itemLayout="horizontal"
     size="large"
     :pagination="pagination"
@@ -45,7 +45,7 @@ export default {
 };
 </script>
 <style>
-div#satellites-list {
+div#satellite-list {
   height: 100%;
   width: 50%;
 }
