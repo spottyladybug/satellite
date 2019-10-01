@@ -1,9 +1,13 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './plugins/ant-design-vue.js'
+import Vue from 'vue';
+import App from 'src/App';
+import router from 'src/router'
+import store from 'src/store/index';
+import 'src/plugins/ant-design-vue';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    render: h => h(App),
+    store,
+    router
+}).$mount('#app');
