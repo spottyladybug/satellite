@@ -52,6 +52,7 @@
         display: flex;
         align-items: center;
         flex-flow: column;
+        z-index: 0;
         background-image: url(./assets/background.jpg);
     }
 </style>

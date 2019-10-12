@@ -1,6 +1,6 @@
 <template>
-    <div id="home">
-        <div class="circle" @mousemove="followMouse">
+    <div id="home" @mousemove="followMouse">
+        <div class="circle">
             <div v-if="isVisible" class="triangle" :style="{ top: top, left: left}"></div>
         </div>
         <div class="container">
@@ -36,8 +36,6 @@ div#home{
     height: 100%;
 }
 #home .container {
-    position: relative;
-    z-index: 3;
     width: 100%;
     max-width: 980px;
     margin: 0 auto;
@@ -66,7 +64,7 @@ div#home{
     cursor: none;
     position: absolute;
     margin-left: -300px;
-    z-index: 1;
+    z-index: -1;
     top: -180px;
     width: 600px;
     height: 600px;
