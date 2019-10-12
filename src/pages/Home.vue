@@ -18,14 +18,21 @@
         },
         methods: {
             followMouse(event){
-                this.top = event.pageY + 220 + 'px';
-                this.left = event.pageX - 800 + 'px';
+                console.log(event)
+                console.log(window)
+                this.top = event.clientY + 180 + 'px'; // -180px is top of circle
+                this.left = event.clientX - window.innerWidth*0.8 + 300 + 'px'; // 80% is left and 300px is half width of circle 
             }
         }
     };
 </script>
 <style>
+div#home{
+    width: 100%;
+    height: 100%;
+}
 .circle {
+    cursor: none;
     position: absolute;
     margin-left: -300px;
     z-index: 1;
