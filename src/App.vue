@@ -37,6 +37,10 @@
     }
 </script>
 <style>
+    div#app {
+        position: relative;
+        overflow: hidden;
+    }
     .ant-layout {
         height: 100%;
     }

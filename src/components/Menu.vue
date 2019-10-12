@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-menu v-model="currentTab" mode="horizontal" :theme="getTheme" @click="handleClick">
+    <a-menu id="menu" v-model="currentTab" mode="horizontal" :theme="getTheme" @click="handleClick">
       <a-menu-item v-if="isProfileLoaded" key="search">
         <router-link :to="{ name: 'searchInfo' }">
           <a-icon type="search" />Найти
@@ -107,3 +107,9 @@ export default {
   }
 };
 </script>
+<style>
+ul#menu{
+    position: relative;
+    z-index: 2;
+}
+</style>
