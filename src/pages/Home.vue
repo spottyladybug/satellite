@@ -2,6 +2,12 @@
     <div id="home">
         <div class="circle" @mousemove="followMouse">
             <div v-if="isVisible" class="triangle" :style="{ top: top, left: left}"></div>
+        </div>
+        <div class="container">
+            <div class="title">
+                <h1 class="header">Твоя домашняя страница</h1>
+                <strong class="subtitle">Расслабься и получай удовольствие</strong>
+            </div>
         </div>            
     </div>
 </template>
@@ -31,7 +37,34 @@ div#home{
     width: 100%;
     height: 100%;
 }
-.circle {
+#home .container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+#home .title {
+    margin: 150px 0 240px;
+}
+#home h1.header {
+    margin: 0 0 .25em;
+    padding: 0;
+    font-family: "PT Serif script=cyrillic rev=1";
+    font-size: 92px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0.994484;
+}
+#home strong.subtitle {
+    font-family: "PT Serif script=cyrillic rev=1";
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.03891;
+}
+#home .circle {
     cursor: none;
     position: absolute;
     margin-left: -300px;
@@ -45,7 +78,7 @@ div#home{
     left: 80%;
     overflow: hidden;
 }
-.triangle {
+#home .triangle {
     position: absolute;
     width: 0;
     height: 0;
