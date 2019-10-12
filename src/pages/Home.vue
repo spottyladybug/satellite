@@ -24,8 +24,6 @@
         },
         methods: {
             followMouse(event){
-                console.log(event)
-                console.log(window)
                 this.top = event.clientY + 180 + 'px'; // -180px is top of circle
                 this.left = event.clientX - window.innerWidth*0.8 + 300 + 'px'; // 80% is left and 300px is half width of circle 
             }
