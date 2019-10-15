@@ -65,7 +65,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .add-satellite-button {
   float: right;
 }
