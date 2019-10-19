@@ -1,38 +1,18 @@
 <template>
   <div id="home" @mousemove="followMouse">
-    <div class="figures-circle">
+    <div class="figures">
       <div class="circle">
-          <div class="circle">
-            <div class="small-triangle" :style="{ top: top + 'px', left: left - 450 + 'px'}"></div>
-          </div>
+        <div class="small-triangle" :style="{ top: triangleTop + 'px', left: triangleLeft + 'px'}"></div>
       </div>
-    </div>
-    <div class="figures-square" @mousemove="followMouse">
       <div class="square">
-        <div class="square">
-          <div class="small-circle" :style="{ top: top - 320 + 'px', left: left + 'px'}"></div>
-        </div>
+        <div class="small-circle" :style="{ top: circleTop + 'px', left: circleLeft + 'px'}"></div>
       </div>
-    </div>
-    <div class="figures-triangle" @mousemove="followMouse">
       <div class="triangle">
-        <div class="small-square" :style="{ top: top + 'px', left: left + 'px'}"></div>
+        <div class="small-square" :style="{ top: squareTop + 'px', left: squareLeft + 'px'}"></div>
       </div>
     </div>
     <div class="container">
       <div class="title">
-        <h1 class="header">Твоя домашняя страница</h1>
-        <strong class="subtitle">Расслабься и получай удовольствие</strong>
-      </div>
-            <div class="title">
-        <h1 class="header">Твоя домашняя страница</h1>
-        <strong class="subtitle">Расслабься и получай удовольствие</strong>
-      </div>
-            <div class="title">
-        <h1 class="header">Твоя домашняя страница</h1>
-        <strong class="subtitle">Расслабься и получай удовольствие</strong>
-      </div>
-            <div class="title">
         <h1 class="header">Твоя домашняя страница</h1>
         <strong class="subtitle">Расслабься и получай удовольствие</strong>
       </div>
@@ -45,14 +25,31 @@ export default {
   name: "Home",
   data() {
     return {
-      top: 400,
-      left: 200,
+      circleTop: 400,
+      circleLeft: 200,
+      squareTop: 400,
+      squareLeft: 200,
+      triangleTop: 400,
+      triangleLeft: 200,
     };
   },
   methods: {
     followMouse(event) {
-      this.top = event.clientY + document.documentElement.scrollTop;
-      this.left = event.clientX + document.documentElement.scrollLeft;
+      const width = window.innerWidth;
+      const top = event.clientY + document.documentElement.scrollTop;
+      const left = event.clientX + document.documentElement.scrollLeft;
+
+      this.triangleLeft = left - (width*0.8 - 300);
+      this.triangleTop = top + 180;
+
+      const y = top - 320;
+      const x = left - (width - (0.5*width + 600 - 120));
+
+      this.circleTop = y*Math.cos(45* Math.PI / 180) - x*Math.sin(45* Math.PI / 180)
+      this.circleLeft = y*Math.sin(45* Math.PI / 180) + x*Math.cos(45* Math.PI / 180);
+      
+      this.squareTop = top - 480;
+      this.squareLeft = left - (width*0.4 - 60);
     }
   },
 };
@@ -62,7 +59,7 @@ div#home {
   width: 100%;
   height: 100%;
 }
-.figures-circle .figures-triangle, .figures-square {
+.figures {
     position: absolute;
     top: 0;
     right: 0;
@@ -96,13 +93,8 @@ div#home {
   font-weight: 400;
   line-height: 1.03891;
 }
-.figures-circle .circle, .figures-square .square {
-  width: 100vw;
-  height: 100vh;
+.circle {
   position: absolute;
-  z-index: -1;
-}
-.figures-circle .circle .circle {
   margin-left: -300px;
   top: -180px;
   width: 600px;
@@ -113,17 +105,16 @@ div#home {
   left: 80%;
   overflow: hidden;
 }
-.figures-square .square .square {
+.square {
+  position: absolute;
   top: 320px;
   right: 50%;
-  left: auto;
   width: 600px;
   height: 600px;
-  margin-right: 320px;
   overflow: hidden;
   background: #e79367;
   margin-right: 120px;
-  transform: rotate(45deg) scale(0.7);
+  transform: rotate(45deg);
 }
 .triangle {
   position: absolute;
@@ -138,33 +129,25 @@ div#home {
   border-width: 0 501px 740px;
   transform: rotate(15deg) scale(0.8);
 }
-.circle .small-triangle {
+.small-triangle {
   position: absolute;
   border-color: transparent transparent #eac263;
   border-style: solid;
   border-width: 0 90px 150px;
   transform: translate(-50%, -50%) rotate(-20deg);
 }
-.figures-circle .small-triangle {
-  position: absolute;
-  border-color: transparent transparent #eac263;
-  border-style: solid;
-  border-width: 0 90px 150px;
-  transform: translate(-50%, -50%) rotate(-20deg);
-}
-.triangle .small-square {
+.small-square {
   position: absolute;
   width: 150px;
   height: 150px;
   background: #849d64;
   transform: translate(-50%, -50%) rotate(15deg);
 }
-.square .small-circle {
+.small-circle {
   position: absolute;
   width: 220px;
   height: 220px;
   background: #221831;
   border-radius: 100%;
-  transform: translate(-50%, -50%);
 }
 </style>
