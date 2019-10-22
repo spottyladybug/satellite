@@ -112,4 +112,7 @@ ul#menu{
     position: relative;
     z-index: 2;
 }
+.ant-menu-horizontal {
+ border-bottom: none;
+}
 </style>

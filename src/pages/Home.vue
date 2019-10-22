@@ -80,14 +80,12 @@ div#home {
 #home h1.header {
   margin: 0 0 0.25em;
   padding: 0;
-  font-family: "PT Serif script=cyrillic rev=1";
   font-size: 92px;
   font-style: normal;
   font-weight: 700;
   line-height: 0.994484;
 }
 #home strong.subtitle {
-  font-family: "PT Serif script=cyrillic rev=1";
   font-size: 56px;
   font-style: normal;
   font-weight: 400;
@@ -100,7 +98,7 @@ div#home {
   width: 600px;
   height: 600px;
   overflow: hidden;
-  background: #0d3d3f;
+  background: #5220DD;
   border-radius: 100%;
   left: 80%;
   overflow: hidden;
@@ -112,7 +110,7 @@ div#home {
   width: 600px;
   height: 600px;
   overflow: hidden;
-  background: #e79367;
+  background: #17C6E9;
   margin-right: 120px;
   transform: rotate(45deg);
 }
@@ -124,14 +122,14 @@ div#home {
   height: 740px;
   overflow: hidden;
   margin-left: 60px;
-  border-color: transparent transparent #eac263;
+  border-color: transparent transparent #FFC647;
   border-style: solid;
   border-width: 0 501px 740px;
   transform: rotate(15deg) scale(0.8);
 }
 .small-triangle {
   position: absolute;
-  border-color: transparent transparent #eac263;
+  border-color: transparent transparent #17C6E9;
   border-style: solid;
   border-width: 0 90px 150px;
   transform: translate(-50%, -50%) rotate(-20deg);
@@ -140,14 +138,14 @@ div#home {
   position: absolute;
   width: 150px;
   height: 150px;
-  background: #849d64;
+  background: #FFC647;
   transform: translate(-50%, -50%) rotate(15deg);
 }
 .small-circle {
   position: absolute;
   width: 220px;
   height: 220px;
-  background: #221831;
+  background: #17224D;
   border-radius: 100%;
 }
 </style>
