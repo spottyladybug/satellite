@@ -11,12 +11,10 @@
         <div class="small-square" :style="{ top: squareTop + 'px', left: squareLeft + 'px'}"></div>
       </div>
     </div>
-    <div class="container">
-      <div class="title">
-        <h1 class="header">Твоя домашняя страница</h1>
-        <strong class="subtitle">Расслабься и получай удовольствие</strong>
-      </div>
-    </div>
+    <a-card class="container">
+        <p class="title">Твоя домашняя страница</p>
+        <p class="subtitle">Расслабься и получай удовольствие</p>
+    </a-card>
   </div>
 </template>
 
@@ -68,16 +66,12 @@ div#home {
     z-index: -1;
     overflow: hidden;
 }
-#home .container {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 30px;
+.container {
+  margin: 15%;
+  background: transparent;
+  border: none;
 }
-#home .title {
-  margin: 150px 0 240px;
-}
-#home h1.header {
+.title {
   margin: 0 0 0.25em;
   padding: 0;
   font-size: 92px;
@@ -85,7 +79,7 @@ div#home {
   font-weight: 700;
   line-height: 0.994484;
 }
-#home strong.subtitle {
+.subtitle {
   font-size: 56px;
   font-style: normal;
   font-weight: 400;
