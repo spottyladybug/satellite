@@ -4,6 +4,7 @@ import store from 'src/store'
 import Login from 'src/pages/Login';
 import Home from 'src/pages/Home';
 import Satellites from 'src/pages/Satellites';
+import WorkInProgress from 'src/pages/WorkInProgress';
 
 Vue.use(Router);
 
@@ -31,22 +32,22 @@ export default new Router({
         {
             path: '/searchInfo',
             name: 'searchInfo',
-            component: Home,
+            component: WorkInProgress,
         },
         {
             path: '/calculator',
             name: 'calculator',
-            component: Home,
+            component: WorkInProgress,
         },
         {
             path: '/profile',
             name: 'profile',
-            component: Home,
+            component: WorkInProgress,
         },
         {
             path: '/settings',
             name: 'settings',
-            component: Home,
+            component: WorkInProgress,
         },
         {
             path: '/login',
@@ -57,7 +58,7 @@ export default new Router({
         {
             path: '/register',
             name: 'register',
-            component: Home,
+            component: WorkInProgress,
             beforeEnter: ifNotAuthenticated,
         },
     ],

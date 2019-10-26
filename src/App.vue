@@ -37,6 +37,10 @@
     }
 </script>
 <style>
+    div#app {
+        position: relative;
+        overflow: hidden;
+    }
     .ant-layout {
         height: 100%;
     }
@@ -48,6 +52,6 @@
         display: flex;
         align-items: center;
         flex-flow: column;
-        background-image: url(./assets/background.jpg);
+        z-index: 0;
     }
 </style>

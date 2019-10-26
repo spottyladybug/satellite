@@ -6,6 +6,16 @@
     :pagination="pagination"
     :dataSource="listData"
   >
+    <a-button
+      slot="header"
+      class="add-satellite-button"
+      type="primary"
+      shape="circle"
+      icon="plus"
+      size="large"
+      @click="addSatellite"
+    />
+    <AddSatelliteModal :visible="isModalVisible" />
     <a-list-item slot="renderItem" slot-scope="item" key="item.title">
       <template slot="actions" v-for="{type} in actions">
         <span :key="type">
@@ -21,6 +31,8 @@
 </template>
 
 <script>
+import AddSatelliteModal from "src/components/AddSatelliteModal.vue";
+
 const listData = [];
 for (let i = 0; i < 23; i++) {
   listData.push({
@@ -33,18 +45,33 @@ for (let i = 0; i < 23; i++) {
 }
 export default {
   name: "Satellites",
+  components: {
+    AddSatelliteModal
+  },
   data() {
     return {
+      isModalVisible: false,
       listData,
       pagination: {
         pageSize: 5
       },
       actions: [{ type: "edit" }, { type: "delete" }]
     };
+  },
+  methods: {
+    addSatellite() {
+      this.isModalVisible = true;
+    }
   }
 };
 </script>
-<style>
+<style scoped>
+.add-satellite-button {
+  float: right;
+}
+.ant-list-item {
+  width: 100%;
+}
 div#satellite-list {
   height: 100%;
   width: 50%;
